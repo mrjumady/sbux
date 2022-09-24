@@ -114,7 +114,7 @@ if ($statusSendOTP == 200) {
         $messageRegistered = get_between($registered[1], '"message":"', '"}');
         if ($statusRegistered == 200) {
             echo "[ ".date('H:i:s')." ] *| ".$colors->getColoredString("Status 200 -> OK, $messageRegistered", "green").PHP_EOL;
-            echo "[ ".date('H:i:s')." ] *| ".$colors->getColoredString("Account Created Successfully, [$first_name $last_name|$phoneNumber|$dptimel|Jumady05@#|https://mailaccess.mrjumady.xyz/?email=$dptimel] Check Folder log", "green").PHP_EOL;
+            echo "[ ".date('H:i:s')." ] *| ".$colors->getColoredString("Account Created Successfully, [$first_name $last_name|$enterNo|$dptimel|Jumady05@#|https://mailaccess.mrjumady.xyz/?email=$dptimel] Check Folder log", "green").PHP_EOL;
             echo "[ ".date('H:i:s')." ] *| ".$colors->getColoredString("Email Access: https://mailaccess.mrjumady.xyz/?email=$dptimel", "green").PHP_EOL;
             if(!is_dir("log")) mkdir("log");
             file_put_contents("log/sbuxAccount.txt", trim($first_name)." ".trim($last_name)."|".$enterNo." |".$dptimel."|Jumady05@#".PHP_EOL, FILE_APPEND);
