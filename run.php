@@ -117,8 +117,8 @@ if ($statusSendOTP == 200) {
             echo "[ ".date('H:i:s')." ] *| ".$colors->getColoredString("Account Created Successfully, [$first_name $last_name|$enterNo|$dptimel|Jumady05@#|https://mailaccess.mrjumady.xyz/?email=$dptimel] Check Folder log", "green").PHP_EOL;
             echo "[ ".date('H:i:s')." ] *| ".$colors->getColoredString("Email Access: https://mailaccess.mrjumady.xyz/?email=$dptimel", "green").PHP_EOL;
             if(!is_dir("log")) mkdir("log");
-            file_put_contents("log/sbuxAccount.txt", trim($first_name)." ".trim($last_name)."|".$enterNo." |".$dptimel."|Jumady05@#".PHP_EOL, FILE_APPEND);
-            $ulangLagi = input("[ ".date('H:i:s')." ] ?| ".$colors->getColoredString("Create Again? (y/N)", "green"));
+           file_put_contents("log/sbuxAccount.txt", trim($first_name)." ".trim($last_name)."|".$enterNo." |".$dptimel."|Jumady05@#|https://mailaccess.mrjumady.xyz/?email=$dptimel".PHP_EOL, FILE_APPEND);
+           $ulangLagi = input("[ ".date('H:i:s')." ] ?| ".$colors->getColoredString("Create Again? (y/N)", "green"));
             if (strtolower($ulangLagi) == "y") {
                 goto createAgain;
             } else {
