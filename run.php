@@ -117,8 +117,8 @@ if ($statusSendOTP == 200) {
             echo "[ ".date('H:i:s')." ] *| ".$colors->getColoredString("Account Created Successfully, [$first_name $last_name|$enterNo|$dptimel|Jumady05@#|https://mailaccess.mrjumady.xyz/?email=$dptimel] Check Folder log", "green").PHP_EOL;
             echo "[ ".date('H:i:s')." ] *| ".$colors->getColoredString("Email Access: https://mailaccess.mrjumady.xyz/?email=$dptimel", "green").PHP_EOL;
             if(!is_dir("log")) mkdir("log");
-           file_put_contents("log/sbuxAccount.txt", trim($first_name)." ".trim($last_name)."|".$enterNo." |".$dptimel."|Jumady05@#|https://mailaccess.mrjumady.xyz/?email=$dptimel".PHP_EOL, FILE_APPEND);
-           $ulangLagi = input("[ ".date('H:i:s')." ] ?| ".$colors->getColoredString("Create Again? (y/N)", "green"));
+            file_put_contents("log/sbuxAccount.txt", trim($first_name)." ".trim($last_name)."|".$enterNo."|".$dptimel."|Jumady05@#|https://mailaccess.mrjumady.xyz/?email=$dptimel".PHP_EOL, FILE_APPEND);
+            $ulangLagi = input("[ ".date('H:i:s')." ] ?| ".$colors->getColoredString("Create Again? (y/N)", "green"));
             if (strtolower($ulangLagi) == "y") {
                 goto createAgain;
             } else {
@@ -148,7 +148,7 @@ function GetBalance($url, $apikey) {
 }
 
 function getNumber($url, $apikey) {
-    $get = file_get_contents('https://'.$url.'/stubs/handler_api.php?api_key='.$apikey.'&action=getNumber&service=ot&operator=&country=6');
+    $get = file_get_contents('https://'.$url.'/stubs/handler_api.php?api_key='.$apikey.'&action=getNumber&service=sr&operator=&country=6');
     return $get;
 }
 
